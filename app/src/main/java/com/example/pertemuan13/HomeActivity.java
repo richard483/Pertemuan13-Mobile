@@ -2,6 +2,7 @@ package com.example.pertemuan13;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -31,6 +32,9 @@ public class HomeActivity extends AppCompatActivity {
                 database = FirebaseDatabase.getInstance();
                 myRef = database.getReference("gallery_data");
                 myRef.setValue(galleryData);
+
+                Intent toGallery = new Intent(getApplicationContext(), GalleryActivity.class);
+                startActivity(toGallery);
             }
 
         }
